@@ -41,7 +41,7 @@ const Hero = () => {
                             View Work <ArrowRight size={20} />
                         </a>
                         <a
-                            href="/Mazen_Ebada_Resume.pdf"
+                            href="/Updated.pdf"
                             target="_blank"
                             className="px-8 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg font-medium hover:border-primary hover:text-primary transition-colors flex items-center gap-2"
                         >
@@ -59,11 +59,11 @@ const Hero = () => {
                     <div className="relative w-80 h-80 md:w-96 md:h-96">
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full opacity-20 animate-pulse" />
                         <div className="absolute inset-4 bg-white rounded-full shadow-2xl overflow-hidden flex items-center justify-center border-4 border-white">
-                            {/* Placeholder for Photo */}
-                            <div className="text-center">
-                                <div className="text-6xl mb-2">👨‍💻</div>
-                                <p className="text-slate-400 font-medium">Photo Placeholder</p>
-                            </div>
+                            <img
+                                src="/profile.JPG"
+                                alt="Mazen Ebada"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
 
                         {/* Floating Cards */}
@@ -78,7 +78,7 @@ const Hero = () => {
                                 </div>
                                 <div>
                                     <p className="text-xs text-slate-500">Focus</p>
-                                    <p className="font-bold text-slate-800">Cybersecurity</p>
+                                    <p className="font-bold text-slate-800">Software Engineering</p>
                                 </div>
                             </div>
                         </motion.div>

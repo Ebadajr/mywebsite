@@ -2,6 +2,26 @@ import React from 'react';
 import { Mail, Phone, Github, Linkedin, Send } from 'lucide-react';
 
 const Contact = () => {
+    const [formData, setFormData] = React.useState({
+        name: '',
+        subject: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { name, subject, message } = formData;
+        const mailtoLink = `mailto:ebada.jr@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\n\nMessage: ${message}`)}`;
+        window.location.href = mailtoLink;
+    };
+
     return (
         <section id="contact" className="py-20 bg-slate-50">
             <div className="container mx-auto px-6">
@@ -38,7 +58,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm text-slate-500">Call Me</p>
-                                    <p className="font-medium text-slate-800">+20 1xx xxx xxxx</p>
+                                    <p className="font-medium text-slate-800">+20 1111107156</p>
                                 </div>
                             </div>
 
@@ -53,7 +73,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm text-slate-500">GitHub</p>
-                                    <p className="font-medium text-slate-800">github.com/mazen-ebada</p>
+                                    <p className="font-medium text-slate-800">github.com/Ebadajr</p>
                                 </div>
                             </a>
                         </div>
@@ -62,39 +82,41 @@ const Contact = () => {
                     {/* Contact Form */}
                     <div className="bg-white p-8 rounded-2xl shadow-lg">
                         <h3 className="text-2xl font-bold text-slate-800 mb-6">Send a Message</h3>
-                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                            <div className="grid md:grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-1">Name</label>
-                                    <input
-                                        type="text"
-                                        className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-                                        placeholder="Your Name"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                    <input
-                                        type="email"
-                                        className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-                                        placeholder="your@email.com"
-                                    />
-                                </div>
+                        <form className="space-y-4" onSubmit={handleSubmit}>
+                            <div>
+                                <label className="block text-sm font-medium text-slate-700 mb-1">Name</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-slate-900"
+                                    placeholder="Your Name"
+                                    required
+                                />
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-1">Subject</label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-slate-900"
                                     placeholder="Project Inquiry"
+                                    required
                                 />
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-1">Message</label>
                                 <textarea
                                     rows={4}
-                                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none text-slate-900"
                                     placeholder="How can I help you?"
+                                    required
                                 />
                             </div>
                             <button

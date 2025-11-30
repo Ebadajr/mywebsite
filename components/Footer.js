@@ -29,10 +29,10 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-4">Connect</h4>
                         <div className="flex gap-4">
-                            <a href="https://github.com" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                            <a href="https://github.com/Ebadajr" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                                 <Github size={20} />
                             </a>
-                            <a href="https://linkedin.com" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                            <a href="https://www.linkedin.com/in/mazen-ebada/" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                                 <Linkedin size={20} />
                             </a>
                             <a href="mailto:ebada.jr@gmail.com" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">

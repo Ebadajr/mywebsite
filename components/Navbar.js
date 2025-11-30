@@ -45,7 +45,7 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Link
-                        href="/Mazen_Ebada_Resume.pdf"
+                        href="/Updated.pdf"
                         target="_blank"
                         className="px-4 py-2 bg-primary text-white rounded-md hover:bg-teal-800 transition-colors font-medium"
                     >
